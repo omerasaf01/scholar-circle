@@ -1,0 +1,47 @@
+import {
+    Settings,
+    User,
+} from "lucide-react"
+
+import { Button } from "@/components/ui/button"
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuGroup,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import {ThemeSwitcher} from "@/components/theme-switcher";
+import {Avatar, AvatarFallback} from "@/components/ui/avatar";
+
+export function ProfileButton() {
+    return (
+        <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="py-7 gap-3">
+                    <Avatar>
+                        <AvatarFallback>CN</AvatarFallback>
+                    </Avatar>
+                        Ömer Asaf
+                </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-56">
+                <DropdownMenuLabel>Hesabım</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuGroup className="*:gap-2">
+                    <DropdownMenuItem>
+                        <User />
+                        <span>Profil</span>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem>
+                        <Settings />
+                        <span>Settings</span>
+                    </DropdownMenuItem>
+                </DropdownMenuGroup>
+                <ThemeSwitcher />
+            </DropdownMenuContent>
+        </DropdownMenu>
+    )
+}
