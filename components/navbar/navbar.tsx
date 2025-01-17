@@ -8,8 +8,7 @@ import {ProfileButton} from "@/components/navbar/profile-button";
 
 export async function Navbar() {
     const supabase = await createClient();
-    const user = await supabase.auth.getUser();
-    console.log(user);
+    const {data, error} = await supabase.auth.getUser();
 
     return (
         <div className="flex justify-between pt-5 pb-2 items-center">
@@ -17,7 +16,7 @@ export async function Navbar() {
                 <Link href="/" className="text-xl">ScholarCircle</Link>
             </div>
             <NavbarElements />
-            {user.error ? (
+            {error ? (
                 <div className="flex gap-2">
                     <Link href="/sign-in" passHref legacyBehavior>
                         <Button variant="outline">Giriş Yap</Button>
@@ -28,7 +27,7 @@ export async function Navbar() {
                 </div>
             ) : (
                 <>
-                    <ProfileButton />
+                    <ProfileButton name={data.user?.user_metadata.name} />
                 </>
             )}
         </div>

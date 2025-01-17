@@ -4,8 +4,9 @@ import {Dot, MessageCircle} from "lucide-react";
 import {Button} from "@/components/ui/button";
 import {FaComment} from "react-icons/fa";
 import {IoChatbubbleOutline} from "react-icons/io5";
+import {Post} from "@/server-actions/post-actions";
 
-export default function PostCard() {
+export default function PostCard(values: {title: string, content: string | null}) {
     return (
         <Card className="w-full">
             <CardHeader>
@@ -24,14 +25,9 @@ export default function PostCard() {
                 </div>
             </CardHeader>
             <CardContent>
-                <div className="text-lg font-bold">SAT Math Sorusu</div>
+                <div className="text-lg font-bold">{values.title}</div>
                 <div className="mt-2">
-                    <p>
-                        SAT Math sorusu çözümü için yardım arıyorum. Soru şu şekilde:
-                    </p>
-                    <p>
-                        Bir daire içerisine çizilen bir üçgenin kenarları 3, 4 ve 5 birimdir. Bu üçgenin çevresi kaç birimdir?
-                    </p>
+                    {values.content}
                 </div>
             </CardContent>
             <CardFooter className="flex justify-between">

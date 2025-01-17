@@ -12,15 +12,13 @@ import {
     DropdownMenuContent,
     DropdownMenuGroup,
     DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import {ThemeSwitcher} from "@/components/theme-switcher";
 import {Avatar, AvatarFallback} from "@/components/ui/avatar";
 import {signOutAction} from "@/app/actions";
 
-export function ProfileButton() {
+export function ProfileButton({name}: {name: string}) {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -28,7 +26,7 @@ export function ProfileButton() {
                     <Avatar>
                         <AvatarFallback>CN</AvatarFallback>
                     </Avatar>
-                        Ömer Asaf
+                    {name}
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-56">

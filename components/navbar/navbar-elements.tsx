@@ -31,7 +31,7 @@ const components: { title: string; href: string; description: string }[] = [
 const informations: { title: string; href: string; description: string }[] = [
     {
         title: "Açık Kaynak",
-        href: "/",
+        href: "https://github.com/omerasaf01/scholar-circle",
         description:
             "Kaynak kodumuzun geliştirilmesine yardımcı olarak katkıda bulunun",
     },
