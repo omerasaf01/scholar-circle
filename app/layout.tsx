@@ -9,8 +9,8 @@ const defaultUrl = process.env.VERCEL_URL
 
 export const metadata = {
   metadataBase: new URL(defaultUrl),
-  title: "Next.js and Supabase Starter Kit",
-  description: "The fastest way to build apps with Next.js and Supabase",
+  title: "ScholarCircle - Turkish Student Community",
+  description: "ScholarCircle is a Turkish student community, that aims students being successful without any coach programs",
 };
 
 const geistSans = Geist({
@@ -32,8 +32,12 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className="container grid grid-cols-12 h-full min-h-screen">
-            <div className="col-span-12"><Navbar /></div>
+          <div className="w-full border-b border-gray-400">
+            <div className="container">
+              <Navbar />
+            </div>
+          </div>
+          <main className="container h-full min-h-screen">
             {children}
           </main>
         </ThemeProvider>

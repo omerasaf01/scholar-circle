@@ -1,4 +1,7 @@
+"use client";
+
 import {
+    LogOut,
     Settings,
     User,
 } from "lucide-react"
@@ -15,6 +18,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import {ThemeSwitcher} from "@/components/theme-switcher";
 import {Avatar, AvatarFallback} from "@/components/ui/avatar";
+import {signOutAction} from "@/app/actions";
 
 export function ProfileButton() {
     return (
@@ -28,8 +32,6 @@ export function ProfileButton() {
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-56">
-                <DropdownMenuLabel>Hesabım</DropdownMenuLabel>
-                <DropdownMenuSeparator />
                 <DropdownMenuGroup className="*:gap-2">
                     <DropdownMenuItem>
                         <User />
@@ -41,6 +43,9 @@ export function ProfileButton() {
                     </DropdownMenuItem>
                 </DropdownMenuGroup>
                 <ThemeSwitcher />
+                <DropdownMenuItem className="gap-2" onClick={signOutAction}>
+                    <LogOut /> Çıkış Yap
+                </DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>
     )

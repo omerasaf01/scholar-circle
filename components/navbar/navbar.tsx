@@ -12,7 +12,7 @@ export async function Navbar() {
     console.log(user);
 
     return (
-        <div className="flex justify-between pt-5 items-center">
+        <div className="flex justify-between pt-5 pb-2 items-center">
             <div>
                 <Link href="/" className="text-xl">ScholarCircle</Link>
             </div>
