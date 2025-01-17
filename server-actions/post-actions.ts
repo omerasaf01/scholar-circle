@@ -33,6 +33,6 @@ export const createPost = async ({title, content}: { title: string, content: str
 
 }
 
-export const getPosts = async (): Promise<Post[]> => {
+export const getPosts = async () => {
     return prisma.post.findMany();
 }
