@@ -6,7 +6,7 @@ import {FaComment} from "react-icons/fa";
 import {IoChatbubbleOutline} from "react-icons/io5";
 import {Post} from "@/server-actions/post-actions";
 
-export default function PostCard(values: {title: string, content: string | null}) {
+export default function PostCard(values: {title: string, content: string | null, user: { name: string | null }}) {
     return (
         <Card className="w-full">
             <CardHeader>
@@ -19,7 +19,7 @@ export default function PostCard(values: {title: string, content: string | null}
                         </Avatar>
                     </div>
                     <div className="block">
-                        <div className="text-lg">Ömer Asaf Karasu</div>
+                        <div className="text-lg">{values.user.name ?? ""}</div>
                         <div className="flex">3 Saat Önce <Dot /> SAT MATH </div>
                     </div>
                 </div>

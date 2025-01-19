@@ -24,7 +24,7 @@ export default async function Home() {
                     </Link>
                 </div>
                 {posts.length <= 0 && <span className="w-full flex justify-center">Postlar yüklenirken bir sorunla karşılaşıldı</span>}
-                {posts.map((value, index, array) => <PostCard  title={value.title} content={value.content} key={index}/>)}
+                {posts.map((value, index) => <PostCard user={{ name: value.author?.name || null }} title={value.title} content={value.content} key={index}/>)}
                 <PostPagination />
             </div>
             <div className="col-span-3 col-start-9 space-y-4">

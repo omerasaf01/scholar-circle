@@ -21,6 +21,7 @@ model Post {
   published Boolean @default(false)
   author    User?   @relation(fields: [authorId], references: [id])
   authorId  String?
+  imageId   String?
 }
 
 model User {
@@ -28,4 +29,6 @@ model User {
   email String  @unique
   name  String?
   posts Post[]
+  is_active Boolean @default(false)
 }
+
